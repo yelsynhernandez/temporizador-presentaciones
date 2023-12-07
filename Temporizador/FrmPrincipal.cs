@@ -6,6 +6,7 @@ namespace Temporizador
 {
     public partial class FrmPrincipal : Form
     {
+        private bool contadorIniciado = false;
         Monitor monitor = new Monitor();
         Acciones a = new Acciones();
         public FrmPrincipal()
@@ -66,9 +67,20 @@ namespace Temporizador
                 MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (continuar)
+            if (contadorIniciado)
+            {
+                DialogResult result = MessageBox.Show("Ya existe un temporizador ejecutándose\n¿Desea reiniciarlo?","Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    a.CerrarFormulario(typeof(FrmContador));
+                    contadorIniciado = false;
+                }
+            }
+
+            if (continuar && !contadorIniciado)
             {
                 monitor.CargarTemporizador(cbMonitores.SelectedIndex + 1, tiempo);
+                contadorIniciado = true;
             }
         }
 
@@ -101,5 +113,13 @@ namespace Temporizador
                 MessageBox.Show("No se ha iniciado un contador");
             }
         }
+
+        private void btnInformación_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Autor: YH\nVersión 1.0");
+
+        }
+
+        public void actualizarTiempo
     }
 }

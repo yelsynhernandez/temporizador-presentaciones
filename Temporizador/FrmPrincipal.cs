@@ -119,7 +119,5 @@ namespace Temporizador
             MessageBox.Show("Autor: YH\nVersión 1.0");
 
         }
-
-        public void actualizarTiempo
     }
 }

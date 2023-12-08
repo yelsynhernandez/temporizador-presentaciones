@@ -132,14 +132,15 @@
             // 
             this.nudHoras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpBase.SetColumnSpan(this.nudHoras, 2);
-            this.nudHoras.Location = new System.Drawing.Point(30, 281);
+            this.nudHoras.Font = new System.Drawing.Font("Verdana", 14F);
+            this.nudHoras.Location = new System.Drawing.Point(30, 279);
             this.nudHoras.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.nudHoras.Name = "nudHoras";
-            this.nudHoras.Size = new System.Drawing.Size(156, 27);
+            this.nudHoras.Size = new System.Drawing.Size(156, 30);
             this.nudHoras.TabIndex = 7;
             this.nudHoras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHoras_KeyPress);
             // 
@@ -159,14 +160,15 @@
             // 
             this.nudSegundos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpBase.SetColumnSpan(this.nudSegundos, 2);
-            this.nudSegundos.Location = new System.Drawing.Point(412, 281);
+            this.nudSegundos.Font = new System.Drawing.Font("Verdana", 14F);
+            this.nudSegundos.Location = new System.Drawing.Point(412, 279);
             this.nudSegundos.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.nudSegundos.Name = "nudSegundos";
-            this.nudSegundos.Size = new System.Drawing.Size(156, 27);
+            this.nudSegundos.Size = new System.Drawing.Size(156, 30);
             this.nudSegundos.TabIndex = 11;
             this.nudSegundos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudSegundos_KeyPress);
             // 
@@ -174,14 +176,15 @@
             // 
             this.nudMinutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpBase.SetColumnSpan(this.nudMinutos, 2);
-            this.nudMinutos.Location = new System.Drawing.Point(221, 281);
+            this.nudMinutos.Font = new System.Drawing.Font("Verdana", 14F);
+            this.nudMinutos.Location = new System.Drawing.Point(221, 279);
             this.nudMinutos.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.nudMinutos.Name = "nudMinutos";
-            this.nudMinutos.Size = new System.Drawing.Size(156, 27);
+            this.nudMinutos.Size = new System.Drawing.Size(156, 30);
             this.nudMinutos.TabIndex = 9;
             this.nudMinutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudMinutos_KeyPress);
             // 
@@ -292,10 +295,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.tlpBase.SetColumnSpan(this.label1, 4);
-            this.label1.Location = new System.Drawing.Point(111, 528);
+            this.tlpBase.SetColumnSpan(this.label1, 5);
+            this.label1.Font = new System.Drawing.Font("Verdana", 13F);
+            this.label1.Location = new System.Drawing.Point(111, 526);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 18);
+            this.label1.Size = new System.Drawing.Size(295, 22);
             this.label1.TabIndex = 20;
             this.label1.Text = "Tiempo en pantalla: 00:00:00";
             // 

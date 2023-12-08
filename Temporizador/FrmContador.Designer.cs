@@ -72,7 +72,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contador";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmContador_Load);
             this.tlpBase.ResumeLayout(false);
             this.ResumeLayout(false);
 

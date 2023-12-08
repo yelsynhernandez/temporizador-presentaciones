@@ -9,15 +9,17 @@ namespace Temporizador
         private int horas { get; set; }
         private int minutos { get; set; }
         private int segundos { get; set; }
-        public FrmContador(int _horas, int _minutos, int _segundos)
+        private Timer timer;
+        public FrmContador(int[] tiempo)
         {
             InitializeComponent();
-            horas = _horas;
-            minutos = _minutos;
-            segundos = _segundos;
+            horas = tiempo[0];
+            minutos = tiempo[1];
+            segundos = tiempo[2];
         }
 
-        public void iniciarContador()
+
+        public void iniciarContador(Label lbl)
         {
             try
             {
@@ -25,17 +27,22 @@ namespace Temporizador
                 string hh;
                 string mm;
                 string ss;
+                string tiempo;
                 bool contar = true;
 
-                Timer timer = new Timer();
-                timer.Interval = 900;
+                //Timer timer = new Timer();
+                timer = new Timer();
+                timer.Interval = 950;
                 timer.Tick += (sender, e) =>
                 {
                     hh = (horas < 10 ? "0" + horas : horas.ToString());
                     mm = (minutos < 10 ? "0" + minutos : minutos.ToString());
                     ss = (segundos < 10 ? "0" + segundos : segundos.ToString());
 
-                    lblContador.Text = $"{hh}:{mm}:{ss}";
+                    tiempo = $"{hh}:{mm}:{ss}";
+
+                    lblContador.Text = tiempo;
+                    lbl.Text = $"Tiempo en pantalla:{tiempo}";
 
                     if(minutos == 0 && horas > 0)
                     {
@@ -91,9 +98,14 @@ namespace Temporizador
             }
         }
 
-        private void FrmContador_Load(object sender, EventArgs e)
+        public void DetenerTimer()
         {
-            iniciarContador();
+            if (timer != null)
+            {
+                timer.Stop();
+                timer.Dispose();
+                timer = null; 
+            }
         }
     }
 }

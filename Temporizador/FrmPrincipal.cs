@@ -79,7 +79,7 @@ namespace Temporizador
 
             if (continuar && !contadorIniciado)
             {
-                monitor.CargarTemporizador(cbMonitores.SelectedIndex + 1, tiempo);
+                monitor.CargarTemporizador(cbMonitores.SelectedIndex + 1, tiempo, lblTiempo);
                 contadorIniciado = true;
             }
         }
@@ -110,8 +110,9 @@ namespace Temporizador
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (!a.CerrarFormulario(typeof(FrmContador))){
-                MessageBox.Show("No se ha iniciado un contador");
+                MessageBox.Show("No se ha iniciado un contador","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            contadorIniciado = false;
         }
 
         private void btnInformación_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@
             this.lblppHora = new System.Windows.Forms.Label();
             this.lblppMinuto = new System.Windows.Forms.Label();
             this.btnInformación = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTiempo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudHoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutos)).BeginInit();
@@ -230,7 +230,7 @@
             this.tlpBase.Controls.Add(this.btnCancelar, 7, 5);
             this.tlpBase.Controls.Add(this.btnContador, 2, 5);
             this.tlpBase.Controls.Add(this.btnInformación, 10, 0);
-            this.tlpBase.Controls.Add(this.label1, 2, 6);
+            this.tlpBase.Controls.Add(this.lblTiempo, 2, 6);
             this.tlpBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpBase.Location = new System.Drawing.Point(0, 0);
             this.tlpBase.Name = "tlpBase";
@@ -291,17 +291,17 @@
             this.btnInformación.UseVisualStyleBackColor = true;
             this.btnInformación.Click += new System.EventHandler(this.btnInformación_Click);
             // 
-            // label1
+            // lblTiempo
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.tlpBase.SetColumnSpan(this.label1, 5);
-            this.label1.Font = new System.Drawing.Font("Verdana", 13F);
-            this.label1.Location = new System.Drawing.Point(111, 526);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 22);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Tiempo en pantalla: 00:00:00";
+            this.lblTiempo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTiempo.AutoSize = true;
+            this.tlpBase.SetColumnSpan(this.lblTiempo, 5);
+            this.lblTiempo.Font = new System.Drawing.Font("Verdana", 13F);
+            this.lblTiempo.Location = new System.Drawing.Point(111, 526);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(295, 22);
+            this.lblTiempo.TabIndex = 20;
+            this.lblTiempo.Text = "Tiempo en pantalla: 00:00:00";
             // 
             // FrmPrincipal
             // 
@@ -343,7 +343,7 @@
         private System.Windows.Forms.Label lblppHora;
         private System.Windows.Forms.Label lblSelMonitor;
         private System.Windows.Forms.Button btnInformación;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTiempo;
     }
 }
 

@@ -177,11 +177,13 @@ namespace Temporizador
                     btnPausar.Enabled = true;
                     contadorIniciado = true;
                     btnIniciar.Text = "Reiniciar";
+                    btnPausar.Text = "Pausar";
                 }
                 else
                 {
                     contadorIniciado = false;
                     btnIniciar.Text = "Iniciar";
+                    btnPausar.Text = "Pausar";
                 }
             }
         }

@@ -11,7 +11,6 @@ namespace Temporizador
         private int segundos { get; set; }
         private Timer timer;
         private Label lbl;
-        private int contador;
         public FrmContador(int[] tiempo, Label _lbl)
         {
             InitializeComponent();
@@ -21,106 +20,83 @@ namespace Temporizador
             lbl = _lbl;
         }
 
-        public void ActualizarTiempo(int[] tiempo)
+        public void ActualizarTiempo(int[] _tiempo)
         {
-            horas = tiempo[0];
-            minutos = tiempo[1];
-            segundos = tiempo[2];
+            horas = _tiempo[0];
+            minutos = _tiempo[1];
+            segundos = _tiempo[2];
         }
 
         private void FrmContador_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             DetenerTemporizador();
         }
 
         private void FrmContador_Load(object sender, EventArgs e)
         {
-            lblContador.Text = Tiempo(horas,minutos,segundos);
+            CalcularTiempo();
         }
 
-        public string Tiempo(int horas, int minutos, int segundos)
+        public void CalcularTiempo()
         {
             string hh;
             string mm;
             string ss;
+            string tiempo;
 
             hh = horas < 10 ? "0" + horas : horas.ToString();
             mm = minutos < 10 ? "0" + minutos : minutos.ToString();
             ss = segundos < 10 ? "0" + segundos : segundos.ToString();
 
-            return $"{hh}:{mm}:{ss}";
+            tiempo = $"{hh}:{mm}:{ss}";
+
+            lbl.Text = tiempo;
+            lblContador.Text = tiempo;
         }
 
-        public void IniciarContador()
+        public void IniciarTemporizador()
         {
             try
-            { 
-                lbl.Text = Tiempo(horas, minutos, segundos);
-                contador = (horas * 3600) + (minutos * 60) + segundos;
+            {
+                //CalcularTiempo();
+                DetenerTemporizador();
+                timer = new Timer
+                {
+                    Interval = 995
+                };
 
-                string tiempo;
-                bool contar = true;
-
-                timer = new Timer();
-                timer.Interval = 970;
                 timer.Tick += (sender, e) =>
                 {
-                    tiempo = Tiempo(horas, minutos, segundos);
-                    lblContador.Text = tiempo;
-                    lbl.Text = tiempo;
-
-                    if (minutos == 0 && horas > 0)
+                    CalcularTiempo();
+                    if (segundos == 0)
                     {
-                        horas--;
-                        minutos = 59;
-                        contar = false;
-                    }
-
-                    if (segundos == 0 && minutos > 0 && contar)
-                    {
-                        minutos--;
-                        segundos = 59;
-                        contar = false;
-                    }
-
-                    if (contar)
-                    {
-                        segundos--;
-                        if (segundos == 0)
+                        if (minutos > 0)
                         {
-                            if (minutos > 0)
+                            minutos--;
+                            segundos = 59;
+                        }
+                        else
+                        {
+                            if (horas > 0)
                             {
-                                minutos--;
-                                segundos = 59;
-                            }
-
-                            if (minutos == 0)
-                            {
-
-                                if (horas > 0)
-                                {
-                                    minutos = 59;
-                                    horas--;
-                                }
+                                horas--;
+                                minutos = 59;
                             }
                         }
                     }
-                    contador--; 
 
-                    if (contador < 0)
+                    segundos--;
+
+                    if (segundos == 0 && minutos == 0 && horas == 0)
                     {
                         timer.Stop();
                     }
-                    
-                    contar = true;
                 };
                 timer.Start();
-
             }
-            catch (Exception ex)
+            catch(Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -134,9 +110,10 @@ namespace Temporizador
             }
         }
 
-        public int TiempoRestante()
+        public bool TiempoRestante()
         {
-            return contador;
+            return (segundos > 0 || minutos > 0 || horas > 0);
         }
+
     }
 }

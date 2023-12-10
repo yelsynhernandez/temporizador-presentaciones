@@ -44,11 +44,11 @@
             this.lblppHora = new System.Windows.Forms.Label();
             this.lblppMinuto = new System.Windows.Forms.Label();
             this.btnInformación = new System.Windows.Forms.Button();
-            this.lblTiempoDesc = new System.Windows.Forms.Label();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.btnPausar = new System.Windows.Forms.Button();
+            this.btnPausa = new System.Windows.Forms.Button();
             this.cbIniciar = new System.Windows.Forms.CheckBox();
             this.btnOcultar = new System.Windows.Forms.Button();
+            this.lblTiempoDesc = new System.Windows.Forms.Label();
             this.lblTiempo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudHoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).BeginInit();
@@ -155,7 +155,7 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnIniciar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.tlpBase.SetColumnSpan(this.btnIniciar, 2);
             this.btnIniciar.Location = new System.Drawing.Point(265, 288);
             this.btnIniciar.Margin = new System.Windows.Forms.Padding(4);
@@ -165,6 +165,8 @@
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = false;
             this.btnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click);
+            this.btnIniciar.MouseEnter += new System.EventHandler(this.btnIniciar_MouseEnter);
+            this.btnIniciar.MouseLeave += new System.EventHandler(this.btnIniciar_MouseLeave);
             // 
             // nudSegundos
             // 
@@ -229,11 +231,12 @@
             this.tlpBase.Controls.Add(this.btnInformación, 10, 0);
             this.tlpBase.Controls.Add(this.btnIniciar, 4, 5);
             this.tlpBase.Controls.Add(this.btnCargar, 1, 5);
-            this.tlpBase.Controls.Add(this.btnPausar, 7, 5);
+            this.tlpBase.Controls.Add(this.btnPausa, 7, 5);
             this.tlpBase.Controls.Add(this.cbIniciar, 1, 2);
             this.tlpBase.Controls.Add(this.btnOcultar, 8, 2);
             this.tlpBase.Controls.Add(this.lblTiempoDesc, 1, 6);
-            this.tlpBase.Controls.Add(this.lblTiempo, 3, 6);
+            this.tlpBase.Controls.Add(this.lblTiempo, 4, 6);
+            this.tlpBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpBase.Location = new System.Drawing.Point(0, 0);
             this.tlpBase.Margin = new System.Windows.Forms.Padding(4);
             this.tlpBase.Name = "tlpBase";
@@ -297,22 +300,9 @@
             this.btnInformación.UseVisualStyleBackColor = true;
             this.btnInformación.Click += new System.EventHandler(this.BtnInformacion_Click);
             // 
-            // lblTiempoDesc
-            // 
-            this.lblTiempoDesc.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblTiempoDesc.AutoSize = true;
-            this.tlpBase.SetColumnSpan(this.lblTiempoDesc, 2);
-            this.lblTiempoDesc.Font = new System.Drawing.Font("Verdana", 12F);
-            this.lblTiempoDesc.Location = new System.Drawing.Point(48, 470);
-            this.lblTiempoDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTiempoDesc.Name = "lblTiempoDesc";
-            this.lblTiempoDesc.Size = new System.Drawing.Size(174, 18);
-            this.lblTiempoDesc.TabIndex = 20;
-            this.lblTiempoDesc.Text = "Tiempo en pantalla:";
-            // 
             // btnCargar
             // 
-            this.btnCargar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnCargar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tlpBase.SetColumnSpan(this.btnCargar, 2);
             this.btnCargar.Location = new System.Drawing.Point(36, 288);
             this.btnCargar.Margin = new System.Windows.Forms.Padding(4);
@@ -323,18 +313,20 @@
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
             // 
-            // btnPausar
+            // btnPausa
             // 
-            this.btnPausar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tlpBase.SetColumnSpan(this.btnPausar, 2);
-            this.btnPausar.Location = new System.Drawing.Point(494, 288);
-            this.btnPausar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPausar.Name = "btnPausar";
-            this.btnPausar.Size = new System.Drawing.Size(186, 138);
-            this.btnPausar.TabIndex = 22;
-            this.btnPausar.Text = "Pausar / Reanudar";
-            this.btnPausar.UseVisualStyleBackColor = false;
-            this.btnPausar.Click += new System.EventHandler(this.BtnPausar_Click);
+            this.btnPausa.BackColor = System.Drawing.SystemColors.Info;
+            this.tlpBase.SetColumnSpan(this.btnPausa, 2);
+            this.btnPausa.Location = new System.Drawing.Point(494, 288);
+            this.btnPausa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPausa.Name = "btnPausa";
+            this.btnPausa.Size = new System.Drawing.Size(186, 138);
+            this.btnPausa.TabIndex = 22;
+            this.btnPausa.Text = "Pausar / Reanudar";
+            this.btnPausa.UseVisualStyleBackColor = false;
+            this.btnPausa.Click += new System.EventHandler(this.BtnPausar_Click);
+            this.btnPausa.MouseEnter += new System.EventHandler(this.btnPausa_MouseEnter);
+            this.btnPausa.MouseLeave += new System.EventHandler(this.btnPausa_MouseLeave);
             // 
             // cbIniciar
             // 
@@ -351,7 +343,7 @@
             // 
             // btnOcultar
             // 
-            this.btnOcultar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOcultar.BackColor = System.Drawing.Color.LightCoral;
             this.tlpBase.SetColumnSpan(this.btnOcultar, 2);
             this.btnOcultar.Location = new System.Drawing.Point(599, 103);
             this.btnOcultar.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
@@ -362,15 +354,28 @@
             this.btnOcultar.UseVisualStyleBackColor = false;
             this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // 
+            // lblTiempoDesc
+            // 
+            this.lblTiempoDesc.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTiempoDesc.AutoSize = true;
+            this.tlpBase.SetColumnSpan(this.lblTiempoDesc, 3);
+            this.lblTiempoDesc.Font = new System.Drawing.Font("Verdana", 14F);
+            this.lblTiempoDesc.Location = new System.Drawing.Point(54, 467);
+            this.lblTiempoDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTiempoDesc.Name = "lblTiempoDesc";
+            this.lblTiempoDesc.Size = new System.Drawing.Size(203, 23);
+            this.lblTiempoDesc.TabIndex = 20;
+            this.lblTiempoDesc.Text = "Tiempo en pantalla:";
+            // 
             // lblTiempo
             // 
             this.lblTiempo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTiempo.AutoSize = true;
-            this.tlpBase.SetColumnSpan(this.lblTiempo, 2);
-            this.lblTiempo.Font = new System.Drawing.Font("Verdana", 12F);
-            this.lblTiempo.Location = new System.Drawing.Point(229, 470);
+            this.tlpBase.SetColumnSpan(this.lblTiempo, 3);
+            this.lblTiempo.Font = new System.Drawing.Font("Verdana", 14F);
+            this.lblTiempo.Location = new System.Drawing.Point(264, 467);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(82, 18);
+            this.lblTiempo.Size = new System.Drawing.Size(100, 23);
             this.lblTiempo.TabIndex = 25;
             this.lblTiempo.Text = "00:00:00";
             // 
@@ -415,7 +420,7 @@
         private System.Windows.Forms.Button btnInformación;
         private System.Windows.Forms.Label lblTiempoDesc;
         private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.Button btnPausar;
+        private System.Windows.Forms.Button btnPausa;
         private System.Windows.Forms.Button btnOcultar;
         private System.Windows.Forms.CheckBox cbIniciar;
         private System.Windows.Forms.Label lblTiempo;

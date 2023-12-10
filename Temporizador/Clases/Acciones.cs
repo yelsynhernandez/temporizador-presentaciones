@@ -15,9 +15,11 @@ namespace Temporizador.Clases
                 {
                     if (screen.DeviceName == pantalla)
                     {
-                        frmContador = new FrmContador(tiempo, lbl);
-                        frmContador.StartPosition = FormStartPosition.Manual;
-                        frmContador.Location = screen.Bounds.Location;
+                        frmContador = new FrmContador(tiempo, lbl)
+                        {
+                            StartPosition = FormStartPosition.Manual,
+                            Location = screen.Bounds.Location
+                        };
                         frmContador.Show();
                     }
                 }
@@ -30,7 +32,7 @@ namespace Temporizador.Clases
 
         public void IniciarTemporizador()
         {
-            frmContador.IniciarContador();
+            frmContador.IniciarTemporizador();
         }
 
         public void CerrarTemporizador()
@@ -52,7 +54,7 @@ namespace Temporizador.Clases
             frmContador.ActualizarTiempo(tiempo);
         }
 
-        public int TiempoRestante()
+        public bool TiempoRestante()
         {
             return frmContador.TiempoRestante();
         }

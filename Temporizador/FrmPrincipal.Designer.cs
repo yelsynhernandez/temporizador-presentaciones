@@ -77,10 +77,10 @@
             this.cbMonitores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonitores.Font = new System.Drawing.Font("Verdana", 14F);
             this.cbMonitores.FormattingEnabled = true;
-            this.cbMonitores.Location = new System.Drawing.Point(364, 55);
+            this.cbMonitores.Location = new System.Drawing.Point(364, 52);
             this.cbMonitores.Margin = new System.Windows.Forms.Padding(6, 10, 6, 5);
             this.cbMonitores.Name = "cbMonitores";
-            this.cbMonitores.Size = new System.Drawing.Size(217, 31);
+            this.cbMonitores.Size = new System.Drawing.Size(217, 36);
             this.cbMonitores.TabIndex = 1;
             // 
             // btnIdentificar
@@ -91,7 +91,7 @@
             this.btnIdentificar.Location = new System.Drawing.Point(599, 47);
             this.btnIdentificar.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.btnIdentificar.Name = "btnIdentificar";
-            this.btnIdentificar.Size = new System.Drawing.Size(132, 41);
+            this.btnIdentificar.Size = new System.Drawing.Size(144, 41);
             this.btnIdentificar.TabIndex = 3;
             this.btnIdentificar.Text = "Identificar";
             this.btnIdentificar.UseVisualStyleBackColor = false;
@@ -102,10 +102,10 @@
             this.lblHoras.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblHoras.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblHoras, 2);
-            this.lblHoras.Location = new System.Drawing.Point(96, 189);
+            this.lblHoras.Location = new System.Drawing.Point(87, 183);
             this.lblHoras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(65, 23);
+            this.lblHoras.Size = new System.Drawing.Size(83, 29);
             this.lblHoras.TabIndex = 4;
             this.lblHoras.Text = "Horas";
             this.lblHoras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,10 +115,10 @@
             this.lblMinutos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblMinutos.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblMinutos, 2);
-            this.lblMinutos.Location = new System.Drawing.Point(315, 189);
+            this.lblMinutos.Location = new System.Drawing.Point(305, 183);
             this.lblMinutos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMinutos.Name = "lblMinutos";
-            this.lblMinutos.Size = new System.Drawing.Size(85, 23);
+            this.lblMinutos.Size = new System.Drawing.Size(106, 29);
             this.lblMinutos.TabIndex = 5;
             this.lblMinutos.Text = "Minutos";
             this.lblMinutos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,10 +128,10 @@
             this.lblSegundos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblSegundos.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblSegundos, 2);
-            this.lblSegundos.Location = new System.Drawing.Point(535, 189);
+            this.lblSegundos.Location = new System.Drawing.Point(521, 183);
             this.lblSegundos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSegundos.Name = "lblSegundos";
-            this.lblSegundos.Size = new System.Drawing.Size(104, 23);
+            this.lblSegundos.Size = new System.Drawing.Size(131, 29);
             this.lblSegundos.TabIndex = 6;
             this.lblSegundos.Text = "Segundos";
             this.lblSegundos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +149,7 @@
             0,
             0});
             this.nudHoras.Name = "nudHoras";
-            this.nudHoras.Size = new System.Drawing.Size(186, 30);
+            this.nudHoras.Size = new System.Drawing.Size(186, 36);
             this.nudHoras.TabIndex = 7;
             this.nudHoras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudHoras_KeyPress);
             // 
@@ -181,7 +181,7 @@
             0,
             0});
             this.nudSegundos.Name = "nudSegundos";
-            this.nudSegundos.Size = new System.Drawing.Size(186, 30);
+            this.nudSegundos.Size = new System.Drawing.Size(186, 36);
             this.nudSegundos.TabIndex = 11;
             this.nudSegundos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudSegundos_KeyPress);
             // 
@@ -198,7 +198,7 @@
             0,
             0});
             this.nudMinutos.Name = "nudMinutos";
-            this.nudMinutos.Size = new System.Drawing.Size(186, 30);
+            this.nudMinutos.Size = new System.Drawing.Size(186, 36);
             this.nudMinutos.TabIndex = 9;
             this.nudMinutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudMinutos_KeyPress);
             // 
@@ -269,10 +269,10 @@
             // 
             this.lblppHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblppHora.AutoSize = true;
-            this.lblppHora.Location = new System.Drawing.Point(234, 218);
+            this.lblppHora.Location = new System.Drawing.Point(231, 218);
             this.lblppHora.Margin = new System.Windows.Forms.Padding(4, 6, 4, 0);
             this.lblppHora.Name = "lblppHora";
-            this.lblppHora.Size = new System.Drawing.Size(19, 23);
+            this.lblppHora.Size = new System.Drawing.Size(24, 29);
             this.lblppHora.TabIndex = 8;
             this.lblppHora.Text = ":";
             this.lblppHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,10 +281,10 @@
             // 
             this.lblppMinuto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblppMinuto.AutoSize = true;
-            this.lblppMinuto.Location = new System.Drawing.Point(463, 218);
+            this.lblppMinuto.Location = new System.Drawing.Point(460, 218);
             this.lblppMinuto.Margin = new System.Windows.Forms.Padding(4, 6, 4, 0);
             this.lblppMinuto.Name = "lblppMinuto";
-            this.lblppMinuto.Size = new System.Drawing.Size(19, 23);
+            this.lblppMinuto.Size = new System.Drawing.Size(24, 29);
             this.lblppMinuto.TabIndex = 10;
             this.lblppMinuto.Text = ":";
             this.lblppMinuto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -334,9 +334,9 @@
             this.cbIniciar.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.cbIniciar, 4);
             this.cbIniciar.Font = new System.Drawing.Font("Verdana", 12F);
-            this.cbIniciar.Location = new System.Drawing.Point(35, 148);
+            this.cbIniciar.Location = new System.Drawing.Point(35, 141);
             this.cbIniciar.Name = "cbIniciar";
-            this.cbIniciar.Size = new System.Drawing.Size(269, 22);
+            this.cbIniciar.Size = new System.Drawing.Size(320, 29);
             this.cbIniciar.TabIndex = 24;
             this.cbIniciar.Text = "Iniciar temporizador al cargar";
             this.cbIniciar.UseVisualStyleBackColor = true;
@@ -348,7 +348,7 @@
             this.btnOcultar.Location = new System.Drawing.Point(599, 103);
             this.btnOcultar.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.btnOcultar.Name = "btnOcultar";
-            this.btnOcultar.Size = new System.Drawing.Size(132, 41);
+            this.btnOcultar.Size = new System.Drawing.Size(144, 41);
             this.btnOcultar.TabIndex = 23;
             this.btnOcultar.Text = "Ocultar";
             this.btnOcultar.UseVisualStyleBackColor = false;
@@ -360,10 +360,10 @@
             this.lblTiempoDesc.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblTiempoDesc, 3);
             this.lblTiempoDesc.Font = new System.Drawing.Font("Verdana", 14F);
-            this.lblTiempoDesc.Location = new System.Drawing.Point(54, 467);
+            this.lblTiempoDesc.Location = new System.Drawing.Point(111, 450);
             this.lblTiempoDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTiempoDesc.Name = "lblTiempoDesc";
-            this.lblTiempoDesc.Size = new System.Drawing.Size(203, 23);
+            this.lblTiempoDesc.Size = new System.Drawing.Size(146, 58);
             this.lblTiempoDesc.TabIndex = 20;
             this.lblTiempoDesc.Text = "Tiempo en pantalla:";
             // 
@@ -373,15 +373,15 @@
             this.lblTiempo.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblTiempo, 3);
             this.lblTiempo.Font = new System.Drawing.Font("Verdana", 14F);
-            this.lblTiempo.Location = new System.Drawing.Point(264, 467);
+            this.lblTiempo.Location = new System.Drawing.Point(264, 464);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(100, 23);
+            this.lblTiempo.Size = new System.Drawing.Size(125, 29);
             this.lblTiempo.TabIndex = 25;
             this.lblTiempo.Text = "00:00:00";
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tlpBase);

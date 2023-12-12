@@ -21,11 +21,7 @@ namespace Temporizador
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             monitor.CargarMonitores(cbMonitores);
-            if (!_pausa)
-            {
-                btnPausa.Text = "Pausa";
-            }
-            cbIniciar.Checked = true;
+            BotonPausa(false);
             IniciarControles();
         }
 
@@ -40,7 +36,7 @@ namespace Temporizador
             if (temporizadorCargado && !contadorIniciado)
             {
                 acciones.IniciarTemporizador();
-                btnPausa.Enabled = true;
+                HabilitarPausa(true);
                 contadorIniciado = true;
                 continuar = false;
             }
@@ -56,7 +52,7 @@ namespace Temporizador
                         {
                             acciones.DetenerTemporizador();
                         }
-                        ConfigurarBotonPausa(false);
+                        BotonPausa(false);
                         AsignarTiempo();
                         acciones.ActualizarTiempo(tiempo);
                         acciones.IniciarTemporizador();
@@ -65,13 +61,12 @@ namespace Temporizador
                 }
                 else
                 {
-                    ConfigurarBotonPausa(false);
+                    BotonPausa(false);
                     AsignarTiempo();
                     acciones.ActualizarTiempo(tiempo);
                     acciones.IniciarTemporizador();
                     contadorIniciado = true;
                 }
-                
             }
         }
 
@@ -96,19 +91,19 @@ namespace Temporizador
             if (!_pausa)
             {
                 acciones.DetenerTemporizador();
-                ConfigurarBotonPausa(true);
+                BotonPausa(true);
             }
             else
             {
                 acciones.IniciarTemporizador();
-                ConfigurarBotonPausa(false);
+                BotonPausa(false);
             }
         }
 
         private void BtnInformacion_Click(object sender, EventArgs e)
         {
             string mensaje = "Autor: YH\n";
-            mensaje += "Versión 1.1\n";
+            mensaje += "Versión 1.2\n";
             mensaje += "https://github.com/yelsynhernandez/temporizador-presentaciones.git";
 
             MessageBox.Show(mensaje, "Créditos", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -153,32 +148,22 @@ namespace Temporizador
 
             if (continuar)
             {
-                //string hh;
-                //string mm;
-                //string ss;
-
-                //hh = tiempo[0] < 10 ? "0" + tiempo[0] : tiempo[0].ToString();
-                //mm = tiempo[1] < 10 ? "0" + tiempo[1] : tiempo[1].ToString();
-                //ss = tiempo[2] < 10 ? "0" + tiempo[2] : tiempo[2].ToString();
-
-                //lblTiempo.Text = $"{hh}:{mm}:{ss}";
-
                 acciones.CargarTemporizador(cbMonitores.SelectedIndex + 1, tiempo, lblTiempo);
                 cbIniciar.Visible = false;
                 temporizadorCargado = true;
-                btnIniciar.Enabled = true;
+                HabilitarInicio(true);
 
                 if (cbIniciar.Checked)
                 {
                     acciones.IniciarTemporizador();
                     contadorIniciado = true;
-                    btnPausa.Enabled = true;
-                    ConfigurarBotonPausa(false);
+                    HabilitarPausa(true);
+                    BotonPausa(false);
                 }
                 else
                 {
                     contadorIniciado = false;
-                    ConfigurarBotonPausa(false);
+                    HabilitarPausa(false);
                 }
             }
         }
@@ -230,62 +215,74 @@ namespace Temporizador
         {
             acciones.CerrarTemporizador();
             temporizadorCargado = false;
-
+            cbIniciar.Enabled = true;
             lblTiempo.Text = "00:00:00";
-            btnIniciar.Text = "Iniciar";
-            btnIniciar.Enabled = false;
-            btnPausa.Enabled = false;
-            cbIniciar.Visible = true;
+            IniciarControles();
         }
 
-        private void ConfigurarBotonPausa(bool detener)
+        private void BotonPausa(bool detener)
         {
             if (detener)
             {
                 _pausa = true;
-                btnPausa.Text = "Reanudar";
+                btnPausa.Image = Properties.Resources.seguir;
                 lblTiempo.Text += "(En pausa)";
                 btnPausa.BackColor = System.Drawing.Color.LightGreen;
             }
             else
             {
                 _pausa = false;
-                btnPausa.Text = "Pausar";
+                btnPausa.Image = Properties.Resources.pausa;
                 btnPausa.BackColor = System.Drawing.Color.LightSalmon;
+            }
+        }
+
+        private void HabilitarInicio(bool habilitar)
+        {
+            btnIniciar.Enabled = habilitar;
+            if (habilitar)
+            {
+                btnIniciar.BackColor = System.Drawing.Color.LightGreen;
+            }
+            else
+            {
+                btnIniciar.BackColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void HabilitarPausa(bool habilitar)
+        {
+            btnPausa.Enabled = habilitar;
+            if (habilitar)
+            {
+                btnPausa.BackColor = System.Drawing.Color.Salmon;
+            }
+            else
+            {
+                btnPausa.BackColor = System.Drawing.Color.Gray;
             }
         }
 
         private void IniciarControles()
         {
+            cbIniciar.Checked = true;
             btnPausa.Enabled = false;
             btnIniciar.Enabled = false;
-        }
-       
-
-        private void btnIniciar_MouseEnter(object sender, EventArgs e)
-        {
-            if (!btnIniciar.Enabled)
-            {
-                this.Cursor = Cursors.No;
-            }
-        }
-
-        private void btnIniciar_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
+            HabilitarInicio(false);
+            HabilitarPausa(false);
+            btnIdentificar.Image = Properties.Resources.check;
+            btnCargar.Image = Properties.Resources.cargar;
+            btnIniciar.Image = Properties.Resources.play;
+            btnPausa.Image = Properties.Resources.pausa;
+            btnRecargar.Image = Properties.Resources.recargar;
+            btnOcultar.Image = Properties.Resources.ocultar;
+            btnSalir.Image = Properties.Resources.salir;
         }
 
-        private void btnPausa_MouseEnter(object sender, EventArgs e)
+        private void btnRecargar_Click(object sender, EventArgs e)
         {
-            if (!btnPausa.Enabled)
-            {
-                this.Cursor = Cursors.No;
-            }
-        }
-
-        private void btnPausa_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
+            monitor.CargarMonitores(cbMonitores);
+            MessageBox.Show("Se ha actualizado la lista de monitores", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

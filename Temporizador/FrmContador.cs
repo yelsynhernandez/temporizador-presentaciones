@@ -34,10 +34,10 @@ namespace Temporizador
 
         private void FrmContador_Load(object sender, EventArgs e)
         {
-            CalcularTiempo();
+            FormatoTiempo();
         }
 
-        public void CalcularTiempo()
+        public void FormatoTiempo()
         {
             string hh;
             string mm;
@@ -58,7 +58,6 @@ namespace Temporizador
         {
             try
             {
-                //CalcularTiempo();
                 DetenerTemporizador();
                 timer = new Timer
                 {
@@ -67,13 +66,13 @@ namespace Temporizador
 
                 timer.Tick += (sender, e) =>
                 {
-                    CalcularTiempo();
+                    FormatoTiempo();
                     if (segundos == 0)
                     {
                         if (minutos > 0)
                         {
                             minutos--;
-                            segundos = 59;
+                            segundos = 60;
                         }
                         else
                         {
@@ -81,13 +80,14 @@ namespace Temporizador
                             {
                                 horas--;
                                 minutos = 59;
+                                segundos = 60;
                             }
                         }
                     }
 
                     segundos--;
 
-                    if (segundos == 0 && minutos == 0 && horas == 0)
+                    if (segundos < 0 && minutos == 0 && horas == 0)
                     {
                         timer.Stop();
                     }

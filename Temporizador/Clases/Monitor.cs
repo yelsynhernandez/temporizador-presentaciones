@@ -7,6 +7,7 @@ namespace Temporizador.Clases
     {   
         public void CargarMonitores(ComboBox cb)
         {
+            cb.Items.Clear();
             try
             {
                 int id = 1;

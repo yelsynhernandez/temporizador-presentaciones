@@ -36,7 +36,6 @@
             this.lblMinutos = new System.Windows.Forms.Label();
             this.lblSegundos = new System.Windows.Forms.Label();
             this.nudHoras = new System.Windows.Forms.NumericUpDown();
-            this.btnIniciar = new System.Windows.Forms.Button();
             this.nudSegundos = new System.Windows.Forms.NumericUpDown();
             this.nudMinutos = new System.Windows.Forms.NumericUpDown();
             this.tlpBase = new System.Windows.Forms.TableLayoutPanel();
@@ -44,12 +43,14 @@
             this.lblppHora = new System.Windows.Forms.Label();
             this.lblppMinuto = new System.Windows.Forms.Label();
             this.btnInformación = new System.Windows.Forms.Button();
+            this.btnIniciar = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.btnPausa = new System.Windows.Forms.Button();
             this.cbIniciar = new System.Windows.Forms.CheckBox();
             this.btnOcultar = new System.Windows.Forms.Button();
             this.lblTiempoDesc = new System.Windows.Forms.Label();
             this.lblTiempo = new System.Windows.Forms.Label();
+            this.btnRecargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudHoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutos)).BeginInit();
@@ -61,12 +62,11 @@
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.SystemColors.Info;
             this.tlpBase.SetColumnSpan(this.btnSalir, 2);
-            this.btnSalir.Location = new System.Drawing.Point(616, 465);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 5, 30, 13);
+            this.btnSalir.Location = new System.Drawing.Point(624, 451);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 30, 13);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(103, 41);
+            this.btnSalir.Size = new System.Drawing.Size(95, 55);
             this.btnSalir.TabIndex = 14;
-            this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
@@ -77,23 +77,21 @@
             this.cbMonitores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonitores.Font = new System.Drawing.Font("Verdana", 14F);
             this.cbMonitores.FormattingEnabled = true;
-            this.cbMonitores.Location = new System.Drawing.Point(364, 52);
+            this.cbMonitores.Location = new System.Drawing.Point(364, 55);
             this.cbMonitores.Margin = new System.Windows.Forms.Padding(6, 10, 6, 5);
             this.cbMonitores.Name = "cbMonitores";
-            this.cbMonitores.Size = new System.Drawing.Size(217, 36);
+            this.cbMonitores.Size = new System.Drawing.Size(217, 31);
             this.cbMonitores.TabIndex = 1;
             // 
             // btnIdentificar
             // 
-            this.btnIdentificar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnIdentificar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tlpBase.SetColumnSpan(this.btnIdentificar, 2);
-            this.btnIdentificar.Location = new System.Drawing.Point(599, 47);
+            this.btnIdentificar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnIdentificar.Location = new System.Drawing.Point(599, 42);
             this.btnIdentificar.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.btnIdentificar.Name = "btnIdentificar";
-            this.btnIdentificar.Size = new System.Drawing.Size(144, 41);
+            this.btnIdentificar.Size = new System.Drawing.Size(63, 52);
             this.btnIdentificar.TabIndex = 3;
-            this.btnIdentificar.Text = "Identificar";
             this.btnIdentificar.UseVisualStyleBackColor = false;
             this.btnIdentificar.Click += new System.EventHandler(this.BtnIdentificar_Click);
             // 
@@ -102,10 +100,10 @@
             this.lblHoras.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblHoras.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblHoras, 2);
-            this.lblHoras.Location = new System.Drawing.Point(87, 183);
+            this.lblHoras.Location = new System.Drawing.Point(96, 189);
             this.lblHoras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(83, 29);
+            this.lblHoras.Size = new System.Drawing.Size(65, 23);
             this.lblHoras.TabIndex = 4;
             this.lblHoras.Text = "Horas";
             this.lblHoras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,10 +113,10 @@
             this.lblMinutos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblMinutos.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblMinutos, 2);
-            this.lblMinutos.Location = new System.Drawing.Point(305, 183);
+            this.lblMinutos.Location = new System.Drawing.Point(315, 189);
             this.lblMinutos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMinutos.Name = "lblMinutos";
-            this.lblMinutos.Size = new System.Drawing.Size(106, 29);
+            this.lblMinutos.Size = new System.Drawing.Size(85, 23);
             this.lblMinutos.TabIndex = 5;
             this.lblMinutos.Text = "Minutos";
             this.lblMinutos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,10 +126,10 @@
             this.lblSegundos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblSegundos.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblSegundos, 2);
-            this.lblSegundos.Location = new System.Drawing.Point(521, 183);
+            this.lblSegundos.Location = new System.Drawing.Point(527, 189);
             this.lblSegundos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSegundos.Name = "lblSegundos";
-            this.lblSegundos.Size = new System.Drawing.Size(131, 29);
+            this.lblSegundos.Size = new System.Drawing.Size(104, 23);
             this.lblSegundos.TabIndex = 6;
             this.lblSegundos.Text = "Segundos";
             this.lblSegundos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,24 +147,9 @@
             0,
             0});
             this.nudHoras.Name = "nudHoras";
-            this.nudHoras.Size = new System.Drawing.Size(186, 36);
+            this.nudHoras.Size = new System.Drawing.Size(186, 30);
             this.nudHoras.TabIndex = 7;
             this.nudHoras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudHoras_KeyPress);
-            // 
-            // btnIniciar
-            // 
-            this.btnIniciar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.tlpBase.SetColumnSpan(this.btnIniciar, 2);
-            this.btnIniciar.Location = new System.Drawing.Point(265, 288);
-            this.btnIniciar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(186, 138);
-            this.btnIniciar.TabIndex = 12;
-            this.btnIniciar.Text = "Iniciar";
-            this.btnIniciar.UseVisualStyleBackColor = false;
-            this.btnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click);
-            this.btnIniciar.MouseEnter += new System.EventHandler(this.btnIniciar_MouseEnter);
-            this.btnIniciar.MouseLeave += new System.EventHandler(this.btnIniciar_MouseLeave);
             // 
             // nudSegundos
             // 
@@ -181,7 +164,7 @@
             0,
             0});
             this.nudSegundos.Name = "nudSegundos";
-            this.nudSegundos.Size = new System.Drawing.Size(186, 36);
+            this.nudSegundos.Size = new System.Drawing.Size(170, 30);
             this.nudSegundos.TabIndex = 11;
             this.nudSegundos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudSegundos_KeyPress);
             // 
@@ -198,24 +181,24 @@
             0,
             0});
             this.nudMinutos.Name = "nudMinutos";
-            this.nudMinutos.Size = new System.Drawing.Size(186, 36);
+            this.nudMinutos.Size = new System.Drawing.Size(186, 30);
             this.nudMinutos.TabIndex = 9;
             this.nudMinutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NudMinutos_KeyPress);
             // 
             // tlpBase
             // 
             this.tlpBase.ColumnCount = 11;
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.194674F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44016F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44016F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.47641F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44016F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44016F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.476411F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44016F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44016F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.389351F));
-            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.822187F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.195074F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44134F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44134F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.476836F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44134F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44134F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.476837F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44134F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.41099F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.41099F));
+            this.tlpBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.822551F));
             this.tlpBase.Controls.Add(this.lblSelMonitor, 1, 1);
             this.tlpBase.Controls.Add(this.lblHoras, 1, 3);
             this.tlpBase.Controls.Add(this.nudHoras, 1, 4);
@@ -228,7 +211,6 @@
             this.tlpBase.Controls.Add(this.cbMonitores, 5, 1);
             this.tlpBase.Controls.Add(this.btnIdentificar, 8, 1);
             this.tlpBase.Controls.Add(this.btnSalir, 8, 6);
-            this.tlpBase.Controls.Add(this.btnInformación, 10, 0);
             this.tlpBase.Controls.Add(this.btnIniciar, 4, 5);
             this.tlpBase.Controls.Add(this.btnCargar, 1, 5);
             this.tlpBase.Controls.Add(this.btnPausa, 7, 5);
@@ -236,6 +218,8 @@
             this.tlpBase.Controls.Add(this.btnOcultar, 8, 2);
             this.tlpBase.Controls.Add(this.lblTiempoDesc, 1, 6);
             this.tlpBase.Controls.Add(this.lblTiempo, 4, 6);
+            this.tlpBase.Controls.Add(this.btnRecargar, 9, 1);
+            this.tlpBase.Controls.Add(this.btnInformación, 0, 7);
             this.tlpBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpBase.Location = new System.Drawing.Point(0, 0);
             this.tlpBase.Margin = new System.Windows.Forms.Padding(4);
@@ -269,10 +253,10 @@
             // 
             this.lblppHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblppHora.AutoSize = true;
-            this.lblppHora.Location = new System.Drawing.Point(231, 218);
+            this.lblppHora.Location = new System.Drawing.Point(234, 218);
             this.lblppHora.Margin = new System.Windows.Forms.Padding(4, 6, 4, 0);
             this.lblppHora.Name = "lblppHora";
-            this.lblppHora.Size = new System.Drawing.Size(24, 29);
+            this.lblppHora.Size = new System.Drawing.Size(19, 23);
             this.lblppHora.TabIndex = 8;
             this.lblppHora.Text = ":";
             this.lblppHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,76 +265,88 @@
             // 
             this.lblppMinuto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblppMinuto.AutoSize = true;
-            this.lblppMinuto.Location = new System.Drawing.Point(460, 218);
+            this.lblppMinuto.Location = new System.Drawing.Point(463, 218);
             this.lblppMinuto.Margin = new System.Windows.Forms.Padding(4, 6, 4, 0);
             this.lblppMinuto.Name = "lblppMinuto";
-            this.lblppMinuto.Size = new System.Drawing.Size(24, 29);
+            this.lblppMinuto.Size = new System.Drawing.Size(19, 23);
             this.lblppMinuto.TabIndex = 10;
             this.lblppMinuto.Text = ":";
             this.lblppMinuto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnInformación
             // 
-            this.btnInformación.Location = new System.Drawing.Point(753, 4);
+            this.btnInformación.Location = new System.Drawing.Point(4, 523);
             this.btnInformación.Margin = new System.Windows.Forms.Padding(4);
             this.btnInformación.Name = "btnInformación";
-            this.btnInformación.Size = new System.Drawing.Size(27, 27);
+            this.btnInformación.Size = new System.Drawing.Size(24, 27);
             this.btnInformación.TabIndex = 19;
             this.btnInformación.Text = "Δ";
             this.btnInformación.UseVisualStyleBackColor = true;
             this.btnInformación.Click += new System.EventHandler(this.BtnInformacion_Click);
             // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIniciar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.tlpBase.SetColumnSpan(this.btnIniciar, 2);
+            this.btnIniciar.Location = new System.Drawing.Point(265, 292);
+            this.btnIniciar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(186, 138);
+            this.btnIniciar.TabIndex = 12;
+            this.btnIniciar.UseVisualStyleBackColor = false;
+            this.btnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click);
+            // 
             // btnCargar
             // 
+            this.btnCargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCargar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tlpBase.SetColumnSpan(this.btnCargar, 2);
-            this.btnCargar.Location = new System.Drawing.Point(36, 288);
+            this.btnCargar.Location = new System.Drawing.Point(36, 292);
             this.btnCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(186, 138);
             this.btnCargar.TabIndex = 21;
-            this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.BtnCargar_Click);
             // 
             // btnPausa
             // 
+            this.btnPausa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPausa.BackColor = System.Drawing.SystemColors.Info;
             this.tlpBase.SetColumnSpan(this.btnPausa, 2);
-            this.btnPausa.Location = new System.Drawing.Point(494, 288);
+            this.btnPausa.Location = new System.Drawing.Point(494, 292);
             this.btnPausa.Margin = new System.Windows.Forms.Padding(4);
             this.btnPausa.Name = "btnPausa";
-            this.btnPausa.Size = new System.Drawing.Size(186, 138);
+            this.btnPausa.Size = new System.Drawing.Size(170, 138);
             this.btnPausa.TabIndex = 22;
-            this.btnPausa.Text = "Pausar / Reanudar";
             this.btnPausa.UseVisualStyleBackColor = false;
             this.btnPausa.Click += new System.EventHandler(this.BtnPausar_Click);
-            this.btnPausa.MouseEnter += new System.EventHandler(this.btnPausa_MouseEnter);
-            this.btnPausa.MouseLeave += new System.EventHandler(this.btnPausa_MouseLeave);
             // 
             // cbIniciar
             // 
             this.cbIniciar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbIniciar.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.cbIniciar, 4);
-            this.cbIniciar.Font = new System.Drawing.Font("Verdana", 12F);
-            this.cbIniciar.Location = new System.Drawing.Point(35, 141);
+            this.cbIniciar.Font = new System.Drawing.Font("Verdana", 14F);
+            this.cbIniciar.Location = new System.Drawing.Point(35, 143);
             this.cbIniciar.Name = "cbIniciar";
-            this.cbIniciar.Size = new System.Drawing.Size(320, 29);
+            this.cbIniciar.Size = new System.Drawing.Size(315, 27);
             this.cbIniciar.TabIndex = 24;
             this.cbIniciar.Text = "Iniciar temporizador al cargar";
             this.cbIniciar.UseVisualStyleBackColor = true;
             // 
             // btnOcultar
             // 
+            this.btnOcultar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOcultar.BackColor = System.Drawing.Color.LightCoral;
             this.tlpBase.SetColumnSpan(this.btnOcultar, 2);
             this.btnOcultar.Location = new System.Drawing.Point(599, 103);
             this.btnOcultar.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.btnOcultar.Name = "btnOcultar";
-            this.btnOcultar.Size = new System.Drawing.Size(144, 41);
+            this.btnOcultar.Size = new System.Drawing.Size(146, 41);
             this.btnOcultar.TabIndex = 23;
-            this.btnOcultar.Text = "Ocultar";
             this.btnOcultar.UseVisualStyleBackColor = false;
             this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // 
@@ -360,10 +356,10 @@
             this.lblTiempoDesc.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblTiempoDesc, 3);
             this.lblTiempoDesc.Font = new System.Drawing.Font("Verdana", 14F);
-            this.lblTiempoDesc.Location = new System.Drawing.Point(111, 450);
+            this.lblTiempoDesc.Location = new System.Drawing.Point(54, 467);
             this.lblTiempoDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTiempoDesc.Name = "lblTiempoDesc";
-            this.lblTiempoDesc.Size = new System.Drawing.Size(146, 58);
+            this.lblTiempoDesc.Size = new System.Drawing.Size(203, 23);
             this.lblTiempoDesc.TabIndex = 20;
             this.lblTiempoDesc.Text = "Tiempo en pantalla:";
             // 
@@ -373,15 +369,27 @@
             this.lblTiempo.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblTiempo, 3);
             this.lblTiempo.Font = new System.Drawing.Font("Verdana", 14F);
-            this.lblTiempo.Location = new System.Drawing.Point(264, 464);
+            this.lblTiempo.Location = new System.Drawing.Point(264, 467);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(125, 29);
+            this.lblTiempo.Size = new System.Drawing.Size(100, 23);
             this.lblTiempo.TabIndex = 25;
             this.lblTiempo.Text = "00:00:00";
             // 
+            // btnRecargar
+            // 
+            this.btnRecargar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnRecargar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecargar.Location = new System.Drawing.Point(680, 42);
+            this.btnRecargar.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(63, 52);
+            this.btnRecargar.TabIndex = 26;
+            this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tlpBase);
@@ -424,6 +432,7 @@
         private System.Windows.Forms.Button btnOcultar;
         private System.Windows.Forms.CheckBox cbIniciar;
         private System.Windows.Forms.Label lblTiempo;
+        private System.Windows.Forms.Button btnRecargar;
     }
 }
 

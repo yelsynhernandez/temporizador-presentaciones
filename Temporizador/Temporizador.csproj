@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="img\info.png" />
     <None Include="img\seguir.png" />
     <None Include="img\salir.png" />
     <None Include="img\recargar.png" />

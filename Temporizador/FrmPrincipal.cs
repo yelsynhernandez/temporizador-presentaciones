@@ -32,26 +32,37 @@ namespace Temporizador
 
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
-            bool continuar = true;
-            if (temporizadorCargado && !contadorIniciado)
+            try
             {
-                acciones.IniciarTemporizador();
-                HabilitarPausa(true);
-                contadorIniciado = true;
-                continuar = false;
-            }
-
-            if (continuar && contadorIniciado)
-            {
-                if(acciones.TiempoRestante())
+                bool continuar = true;
+                if (temporizadorCargado && !contadorIniciado)
                 {
-                    DialogResult result = MessageBox.Show("Ya existe un temporizador ejecutándose\n¿Desea reiniciarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    acciones.IniciarTemporizador();
+                    HabilitarPausa(true);
+                    contadorIniciado = true;
+                    continuar = false;
+                }
+
+                if (continuar && contadorIniciado)
+                {
+                    if (acciones.TiempoRestante())
                     {
-                        if (!_pausa)
+                        DialogResult result = MessageBox.Show("Ya existe un temporizador ejecutándose\n¿Desea reiniciarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
                         {
-                            acciones.DetenerTemporizador();
+                            if (!_pausa)
+                            {
+                                acciones.DetenerTemporizador();
+                            }
+                            BotonPausa(false);
+                            AsignarTiempo();
+                            acciones.ActualizarTiempo(tiempo);
+                            acciones.IniciarTemporizador();
+                            contadorIniciado = true;
                         }
+                    }
+                    else
+                    {
                         BotonPausa(false);
                         AsignarTiempo();
                         acciones.ActualizarTiempo(tiempo);
@@ -59,17 +70,12 @@ namespace Temporizador
                         contadorIniciado = true;
                     }
                 }
-                else
-                {
-                    BotonPausa(false);
-                    AsignarTiempo();
-                    acciones.ActualizarTiempo(tiempo);
-                    acciones.IniciarTemporizador();
-                    contadorIniciado = true;
-                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void NudHoras_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -103,7 +109,7 @@ namespace Temporizador
         private void BtnInformacion_Click(object sender, EventArgs e)
         {
             string mensaje = "Autor: YH\n";
-            mensaje += "Versión 1.2\n";
+            mensaje += "Versión 1.3\n";
             mensaje += "https://github.com/yelsynhernandez/temporizador-presentaciones.git";
 
             MessageBox.Show(mensaje, "Créditos", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -270,6 +276,7 @@ namespace Temporizador
             btnIniciar.Enabled = false;
             HabilitarInicio(false);
             HabilitarPausa(false);
+            btnInformación.Image = Properties.Resources.info;
             btnIdentificar.Image = Properties.Resources.check;
             btnCargar.Image = Properties.Resources.cargar;
             btnIniciar.Image = Properties.Resources.play;

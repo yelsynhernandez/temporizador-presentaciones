@@ -59,13 +59,14 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.SystemColors.Info;
             this.tlpBase.SetColumnSpan(this.btnSalir, 2);
-            this.btnSalir.Location = new System.Drawing.Point(721, 499);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 30, 13);
+            this.btnSalir.Location = new System.Drawing.Point(721, 492);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 13, 30, 13);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 55);
+            this.btnSalir.Size = new System.Drawing.Size(95, 62);
             this.btnSalir.TabIndex = 14;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -246,7 +247,7 @@
             this.lblSelMonitor.AutoSize = true;
             this.tlpBase.SetColumnSpan(this.lblSelMonitor, 3);
             this.lblSelMonitor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSelMonitor.Font = new System.Drawing.Font("Verdana", 12F);
+            this.lblSelMonitor.Font = new System.Drawing.Font("Verdana", 13F);
             this.lblSelMonitor.Location = new System.Drawing.Point(46, 45);
             this.lblSelMonitor.Margin = new System.Windows.Forms.Padding(6, 4, 6, 0);
             this.lblSelMonitor.Name = "lblSelMonitor";

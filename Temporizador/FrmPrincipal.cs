@@ -109,7 +109,7 @@ namespace Temporizador
         private void BtnInformacion_Click(object sender, EventArgs e)
         {
             string mensaje = "Autor: YH\n";
-            mensaje += "Versión 1.3\n";
+            mensaje += "Versión 1.4\n";
             mensaje += "https://github.com/yelsynhernandez/temporizador-presentaciones.git";
 
             MessageBox.Show(mensaje, "Créditos", MessageBoxButtons.OK, MessageBoxIcon.Question);
